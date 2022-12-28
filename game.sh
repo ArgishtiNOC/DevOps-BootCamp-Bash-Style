@@ -14,16 +14,16 @@ while [ "$ch" -ne 3 ]; do
     while [ $c -eq 0 ];
     do
         x=11; r=("$(shuf -i 0-9 -n 10)")
-        echo "${r[@]} "; for i in {1..10}; do
-            a[$i]=$i
+        echo "${r[@]}"; for i in {1..10}; do
+            a[i]=$i
         done
-        echo "${a[@]} "
+        echo "${a[@]}"
         read -t 5 -rp "Enter the index of your number : " x
     if [[ $? -gt 128 ]]; then
     c=1
     break
     fi
-if [ "${r[$(("$x"))-1]}" -eq "$n" ];then
+if [ "${r[$(("$x"))-1]}" -eq "$n" ]; then
             echo "Great"
     ((p=p+1))
         else
